@@ -3,6 +3,7 @@ node_modules
 .cache
 .vercel
 .output
+.husky
 
 public/build
 server/build
