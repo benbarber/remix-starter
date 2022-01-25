@@ -4,8 +4,10 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix watch",
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -i ./styles/tailwind.css -o ./styles/build/app.css --minify",
+    "dev": "concurrently \"npm run dev:css\" \"node_modules/.bin/remix watch\" \"npm run start:dev\"",
+    "dev:css": "tailwindcss -i ./styles/tailwind.css -o ./styles/build/app.css --watch",
     "format": "npx prettier --write .",
     "format:check": "npx prettier --check .",
     "postinstall": "remix setup node",
@@ -17,6 +19,7 @@
     "@remix-run/react": "^1.1.3",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
+    "dotenv": "^14.3.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "react": "^17.0.2",
@@ -27,8 +30,9 @@
     "@remix-run/dev": "^1.1.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
-    "dotenv": "^14.3.0",
+    "concurrently": "^7.0.0",
     "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.16",
     "typescript": "^4.1.2"
   },
   "engines": {
