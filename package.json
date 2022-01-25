@@ -1,11 +1,13 @@
 {
   "private": true,
-  "name": "remix-app-template",
+  "name": "remix-starter",
   "description": "",
   "license": "",
   "scripts": {
     "build": "remix build",
     "dev": "remix watch",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
     "postinstall": "remix setup node",
     "start": "cross-env NODE_ENV=production node -r dotenv/config server/index.js",
     "start:dev": "cross-env NODE_ENV=development node -r dotenv/config server/index.js"
@@ -26,6 +28,7 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "dotenv": "^14.3.0",
+    "prettier": "^2.5.1",
     "typescript": "^4.1.2"
   },
   "engines": {
