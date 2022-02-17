@@ -1,7 +1,9 @@
 node_modules
 
-/.cache
-/styles/build
+.cache
+.env
+
 /server/build
 /public/build
-.env
+
+app/tailwind.css
