@@ -1,3 +1,4 @@
+import tailwind from "./tailwind.css";
 import {
   Links,
   LiveReload,
@@ -7,7 +8,6 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import tailwind from "./tailwind.css";
 
 export function links() {
   return [{ rel: "stylesheet", href: tailwind }];
