@@ -5,7 +5,7 @@ node_modules
 .output
 .husky
 
+/build
 public/build
-server/build
 api/_build
 app/tailwind.css
