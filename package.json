@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm run build:css && remix build",
     "build:css": "postcss ./styles/root.css -o ./app/tailwind.css --minify",
-    "dev": "remix build && run-p dev:*",
+    "dev": "npm run build:css && remix build && run-p dev:*",
     "dev:css": "postcss ./styles/root.css -o ./app/tailwind.css --watch",
     "dev:node": "cross-env NODE_ENV=development nodemon -r dotenv/config ./server.js --watch ./server.js",
     "dev:remix": "remix watch",
