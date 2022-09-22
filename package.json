@@ -6,9 +6,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "npm run build:css && remix build",
-    "build:css": "postcss ./styles/root.css -o ./app/tailwind.css --minify",
+    "build:css": "postcss ./app/styles/root.css -o ./app/styles/tailwind.css --minify",
     "dev": "npm run build:css && remix build && run-p dev:*",
-    "dev:css": "postcss ./styles/root.css -o ./app/tailwind.css --watch",
+    "dev:css": "postcss ./app/styles/root.css -o ./app/styles/tailwind.css --watch",
     "dev:node": "cross-env NODE_ENV=development nodemon -r dotenv/config ./server.js --watch ./server.js",
     "dev:remix": "remix watch",
     "lint": "eslint './app/**/*.{js,jsx,ts,tsx}' --max-warnings=0",
@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "start": "cross-env NODE_ENV=production node -r dotenv/config ./server.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "validate": "npm run format:check && npm run lint"
   },
   "dependencies": {
     "@remix-run/express": "^1.7.0",
