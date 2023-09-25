@@ -1,5 +1,5 @@
-import compiledTailwindStylesheet from "./styles/tailwind.css";
-import type { MetaFunction } from "@remix-run/node";
+import stylesheet from "./tailwind.css";
+import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -9,28 +9,24 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-export function links() {
-  return [{ rel: "stylesheet", href: compiledTailwindStylesheet }];
-}
-
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export default function App() {
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="text-gray-700">
+      <body>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <LiveReload />
       </body>
     </html>
   );

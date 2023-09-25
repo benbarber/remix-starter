@@ -1,10 +1,5 @@
 node_modules
 
-.cache
-.vercel
-.output
-.husky
+/.cache
 
-public/build
-server/build
-api/_build
+/public/build

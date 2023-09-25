@@ -1,7 +1,18 @@
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: 
+      "New Remix App" },
+    { name: "description", 
+    content: "Welcome to Remix!" },
+  ];
+}
+
 export default function Index() {
   return (
     <div className="p-12">
-      <h1 className="mb-4 text-2xl font-bold">Welcome to Remix</h1>
+      <h1 className="mb-4 py-2 text-2xl font-bold">Welcome to Remix</h1>
       <ul className="list-inside list-disc">
         <li>
           <a
